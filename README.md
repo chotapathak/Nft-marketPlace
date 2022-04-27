@@ -4,6 +4,13 @@ This project is for Nft-marketPlace where user can mint and Auction thier
 NFT
 This project built using ERC721 contract 
 
+## Demo
+![Home Desktop](./Demo/Home.png "Desktop Demo")
+![Explorer ](./Demo//explore.png "explore Demo")
+![Creation ](./Demo/Home.png "Creation Demo")
+![New Item](./Demo//explore.png "explore Demo")
+
+
 ### Try running some of the following tasks:
 
 ```shell
