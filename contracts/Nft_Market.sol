@@ -7,6 +7,7 @@ import '@openzeppelin/contracts/utils/math/SafeMath.sol';
 import '@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol';
 
 
+
 contract Nft_Market is ERC721 {
     using SafeMath for uint256;
     
