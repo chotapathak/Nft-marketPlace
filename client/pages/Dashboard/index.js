@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import './dashboard.css';
-// import pic from './assets/arts'
 
 function DashBoard() {
    

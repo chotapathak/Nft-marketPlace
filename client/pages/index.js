@@ -1,5 +1,5 @@
 import { useConnect, useAccount } from 'wagmi';
-
+import DashBoard from './Dashboard';
 const Home = () => {
   const [{ data: connectData, error: connectError }, connect] = useConnect();
   const { connected } = connectData;
@@ -19,6 +19,8 @@ const Home = () => {
         >
           Disconnect
         </button>
+        <DashBoard/>
+        
         <InfoSection />
       </div>
     );
@@ -28,6 +30,7 @@ const Home = () => {
     <div className='py-24 text-center'>
       <h1 className='text-2xl font-bold'>Welcome to create-web3-frontend</h1>
       <p className='mt-10'>Connect your wallet:</p>
+      <h1>jndsjsj</h1>
       <div className='mt-5 flex justify-center gap-6'>
         {/* connectData.connectors contains the list of available 'connectors' like Metamask, WalletConnect, etc */}
         {connectData.connectors.map((x) => (
