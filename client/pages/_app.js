@@ -2,8 +2,10 @@ import '../styles/globals.css';
 import { Connector, Provider, chain, defaultChains } from 'wagmi';
 import { InjectedConnector } from 'wagmi/connectors/injected';
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect';
-import { WalletLinkConnector } from 'wagmi/connectors/walletLink';
 import { providers } from 'ethers';
+import { UserProvider } from '../Context/Context';
+import { BrowserRouter as Router, Routes, Route , Link } from 'react-router-dom';
+
 
 // Get environment variables
 const infuraId = process.env.NEXT_PUBLIC_INFURA_ID;
@@ -26,13 +28,6 @@ const connectors = ({ chainId }) => {
         qrcode: true,
       },
     }),
-    new WalletLinkConnector({
-      chains,
-      options: {
-        appName: 'create-web3-frontend',
-        jsonRpcUrl: `${rpcUrl}/${infuraId}`,
-      },
-    }),
   ];
 };
 
@@ -53,14 +48,18 @@ const webSocketProvider = ({ chainId }) =>
 
 function MyApp({ Component, pageProps }) {
   return (
+    <>
     <Provider
       autoConnect
       connectors={connectors}
       provider={provider}
       webSocketProvider={webSocketProvider}
-    >
+      > 
+      <UserProvider>
       <Component {...pageProps} />
+      </UserProvider>
     </Provider>
+    </>
   );
 }
 
